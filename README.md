@@ -1,42 +1,49 @@
-# Spendly - Control de Gastos Inteligente
+# Spendly - Smart Expense Tracker
 
-## Descripción del Proyecto
-App móvil para control de gastos personales enfocada en usuarios costarricenses, 
-con captura automática de transacciones bancarias mediante SMS/correo.
+## Project Description
 
-## Características principales
--  Registro manual de gastos en efectivo
-- Captura automática de transacciones bancarias
-- Vinculación de múltiples entidades bancarias (sin datos sensibles)
-- Categorización inteligente de gastos
-- Resumen visual por banco y categoría
-- Adjuntar fotos de recibos
-- Alertas de presupuesto
+A mobile app for personal expense tracking focused on Costa Rican users,
+with automatic transaction capture via SMS or email.
 
-##CRUD Implementado
-| Operación | Funcionalidad |
-|-----------|---------------|
-| CREATE    | Agregar gastos, categorías, bancos |
-| READ      | Ver historial, resúmenes, reportes |
-| UPDATE    | Editar transacciones y categorías |
-| DELETE    | Eliminar gastos duplicados |
+## Key Features
 
+* Manual registration of cash expenses
+* Automatic capture of bank transactions
+* Linking multiple bank accounts (without sensitive data)
+* Intelligent expense categorization
+* Visual summary by bank and category
+* Attach receipt photos
+* Budget alerts
 
+## Implemented CRUD
 
-## Tecnologías
-- Kotlin
--  Firebase y room (cuando no hay internet )para base de datos
-- APIs de SMS y permisos del sistema
+| Operation | Functionality                        |
+| --------- | ------------------------------------ |
+| CREATE    | Add expenses, categories, banks      |
+| READ      | View history, summaries, and reports |
+| UPDATE    | Edit transactions and categories     |
+| DELETE    | Remove duplicate expenses            |
 
-## Diseño y Mockups
+## Technologies
 
-### Pantallas principales:
-1. **Login/Registro**
-   <img width="498" height="900" alt="sign up" src="https://github.com/user-attachments/assets/6f2c06e3-d1d0-47ed-bba4-2df99db36abe" />
+* Kotlin
+* Firebase and Room (for offline database use)
+* SMS APIs and system permissions
 
-3. **Dashboard** - Resumen de gastos
-4. **Agregar gasto manual**
-5. **Vincular bancos**
-6. **Historial de transacciones**
-7. **Estadísticas y gráficos**
+## Design and Mockups
 
+### Main Screens:
+
+1. **Login / Sign Up**
+   **Sign Up:** <img width="498" height="900" alt="sign up" src="https://github.com/user-attachments/assets/6f2c06e3-d1d0-47ed-bba4-2df99db36abe" />
+   **Login:** <img width="537" height="926" alt="login" src="https://github.com/user-attachments/assets/7a3e4eaa-154e-4770-b437-25e7854293b6" />
+
+2. **Dashboard** – Expense summary
+
+3. **Add Manual Expense**
+
+4. **Link Bank Accounts**
+
+5. **Transaction History**
+
+6. **Statistics and Charts**
