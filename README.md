@@ -32,9 +32,11 @@ con captura automática de transacciones bancarias mediante SMS/correo.
 
 ### Pantallas principales:
 1. **Login/Registro**
-2. **Dashboard** - Resumen de gastos
-3. **Agregar gasto manual**
-4. **Vincular bancos**
-5. **Historial de transacciones**
-6. **Estadísticas y gráficos**
+   <img width="498" height="900" alt="sign up" src="https://github.com/user-attachments/assets/6f2c06e3-d1d0-47ed-bba4-2df99db36abe" />
+
+3. **Dashboard** - Resumen de gastos
+4. **Agregar gasto manual**
+5. **Vincular bancos**
+6. **Historial de transacciones**
+7. **Estadísticas y gráficos**
 
