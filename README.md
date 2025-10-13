@@ -34,7 +34,7 @@ with automatic transaction capture via SMS or email.
 
 ### Main Screens:
 
-1. **Login / Sign Up**
+
    **Sign Up:** <img width="200" height="500" alt="sign up" src="https://github.com/user-attachments/assets/6f2c06e3-d1d0-47ed-bba4-2df99db36abe" />
    **Login:** <img width="200" height="500" alt="login" src="https://github.com/user-attachments/assets/7a3e4eaa-154e-4770-b437-25e7854293b6" />
 
