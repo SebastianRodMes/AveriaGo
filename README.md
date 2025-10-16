@@ -37,6 +37,8 @@ with automatic transaction capture via SMS or email.
 
    **Sign Up:** <img width="200" height="500" alt="sign up" src="https://github.com/user-attachments/assets/6f2c06e3-d1d0-47ed-bba4-2df99db36abe" />
    **Login:** <img width="200" height="500" alt="Captura de pantalla 2025-10-13 163334" src="https://github.com/user-attachments/assets/098fcf82-df24-4a9f-906a-7895a5bc6d1f" />
+**Home page:** <img width="200" height="500" alt="Captura de pantalla 2025-10-13 163334" src="![Uploading Captura de pantalla 2025-10-16 171429.png…]()
+" />
 
 
 
