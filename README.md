@@ -21,10 +21,13 @@ Sistema integral para la gestión de reportes de averías en servicios de teleco
 ### 1. **Usuario/Cliente** 
 
 - Reporta averías
-- Chatea con call center(futura implementacion real)
-- Consulta historial de reportes
-- Recibe notificaciones de estado
-- Ve noticias/outages de su zona
+- Chatear con call center(futura implementacion real)
+- Consultar historial de reportes
+- Recibir notificaciones de estado
+- Ver noticias/outages de su zona
+
+
+
   <img width="219" height="250" alt="Captura de pantalla 2025-10-20 225332" src="https://github.com/user-attachments/assets/e3eab1d3-2757-4938-90ff-40539806b024" />
 <img width="324" height="542" alt="Captura de pantalla 2025-10-20 225340" src="https://github.com/user-attachments/assets/d9cdcac5-8c16-41da-9cd3-33e50ac60dc9" />
 <img width="314" height="815" alt="Captura de pantalla 2025-10-20 225349" src="https://github.com/user-attachments/assets/6953cfe4-9c57-474b-a71e-23dd1489d9eb" />
