@@ -31,26 +31,28 @@ Sistema integral para la gestión de reportes de averías en servicios de teleco
  Screenshots - Aplicación Móvil
 Autenticación y Onboarding
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/e3eab1d3-2757-4938-90ff-40539806b024" width="250" alt="Splash Screen"/>
-  <img src="https://github.com/user-attachments/assets/6953cfe4-9c57-474b-a71e-23dd1489d9eb" width="250" alt="Login"/>
-  <img src="https://github.com/user-attachments/assets/8c16-41da-9cd3-33e50ac60dc9" width="250" alt="Registro"/>
+  <img src="https://github.com/user-attachments/assets/e3eab1d3-2757-4938-90ff-40539806b024" width="250" alt="1. Splash Screen - Logo"/>
+  <img src="https://github.com/user-attachments/assets/8c16-41da-9cd3-33e50ac60dc9" width="250" alt="2. Login"/>
+  <img src="https://github.com/user-attachments/assets/6953cfe4-9c57-474b-a71e-23dd1489d9eb" width="250" alt="3. Sign Up"/>
 </div>
 Home y Navegación Principal
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/7cdf094a-15bb-4773-9439-f4ea8c2e3e8e" width="250" alt="Home Dashboard"/>
-  <img src="https://github.com/user-attachments/assets/68d2ca7e-e732-46c9-ae4a-ae87a9769309" width="250" alt="Mis Reportes"/>
-  <img src="https://github.com/user-attachments/assets/0afcf527-c56e-4677-a58f-d3c9dc7436ab" width="250" alt="Perfil"/>
+  <img src="https://github.com/user-attachments/assets/7cdf094a-15bb-4773-9439-f4ea8c2e3e8e" width="250" alt="4. Home Dashboard"/>
+  <img src="https://github.com/user-attachments/assets/68d2ca7e-e732-46c9-ae4a-ae87a9769309" width="250" alt="5. Mis Reportes"/>
+  <img src="https://github.com/user-attachments/assets/88c5d1e9-f654-4b91-8823-8876ea80881d" width="250" alt="6. Detalle de Reporte"/>
+</div>
+Chat en Tiempo Real
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/526a4d9d-b702-4fa8-8cc5-351cb6f5bcc7" width="250" alt="7. Chat con Soporte"/>
 </div>
 Crear Reporte (Flujo Completo)
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/39f1b8e9-3056-4370-afd5-edc0c6dbd2a1" width="250" alt="Seleccionar Categoría"/>
-  <img src="https://github.com/user-attachments/assets/526a4d9d-b702-4fa8-8cc5-351cb6f5bcc7" width="250" alt="Seleccionar Subcategoría"/>
-  <img src="https://github.com/user-attachments/assets/0afcf527-c56e-4677-a58f-d3c9dc7436ab" width="250" alt="Detalles del Reporte"/>
+  <img src="https://github.com/user-attachments/assets/39f1b8e9-3056-4370-afd5-edc0c6dbd2a1" width="250" alt="8. Crear Reporte - Categoría"/>
+  <img src="https://github.com/user-attachments/assets/0afcf527-c56e-4677-a58f-d3c9dc7436ab" width="250" alt="9. Tipo de Problema"/>
+  <img src="https://github.com/user-attachments/assets/23f311ba-8669-44da-beef-a64e3702cfca" width="250" alt="10. Detalles del Reporte"/>
 </div>
-Chat y Detalle de Tickets
+Perfil de Usuario
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/88c5d1e9-f654-4b91-8823-8876ea80881d" width="250" alt="Detalle de Ticket"/>
-  <img src="https://github.com/user-attachments/assets/23f311ba-8669-44da-beef-a64e3702cfca" width="250" alt="Chat en Tiempo Real"/>
+  <img src="https://github.com/user-attachments/assets/23f311ba-8669-44da-beef-a64e3702cfca" width="250" alt="11. Perfil"/>
 </div>
-
 
