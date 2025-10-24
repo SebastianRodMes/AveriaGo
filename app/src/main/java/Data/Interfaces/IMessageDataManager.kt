@@ -16,10 +16,10 @@ interface IMessageDataManager {
     fun getMessagesByChatId(chatId: String): List<Message>
 
     /**
-     * Optional: Listens for real-time updates to the messages in a chat.
-     * This is an advanced function for building a live chat experience.
+     *  Listens for real-time updates to the messages in a chat.
+     * function for building a live chat.
      * It would be implemented using Firestore's snapshot listeners if possible.
-
+     */
     fun listenForMessages(chatId: String, onUpdate: (List<Message>) -> Unit)
-    */
+
 }

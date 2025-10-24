@@ -33,5 +33,6 @@ data class Chat(
      * Unread messages
      * This field will be also updated with a Cloud Function.
      */
-    var unreadCountForUser: Int = 0
+    var unreadCountForUser: Int = 0,
+    var unreadCountForAgent: Int = 0
 )

@@ -10,4 +10,6 @@ interface ICategoryDataManager {
     //READ
     fun getAllCategories(): List<Category>
     fun getCategoryById(id: String): Category?
+
+    fun getCategoryBySlug(slug: String): Category?
 }

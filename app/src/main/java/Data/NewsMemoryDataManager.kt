@@ -1,43 +1,32 @@
 package Data
 
 import Data.Interfaces.INewsDataManager
-import Entity.News
-
-/**
- * Implementación del contrato INewsDataManager que guarda los datos
- * en una simple lista en memoria. Los datos se pierden si la app se cierra.
- *  desarrollo y pruebas iniciales.
+import Entity.News/**
+ * Implementation of the INewsDataManager contract that stores data
+ * in a simple in-memory list. Data is lost if the app is closed.
+ *
  */
 object NewsMemoryDataManager : INewsDataManager {
 
-    // Lista en memoria que contendrá todas las noticias.
+    // In-memory list that will hold all the news items.
     private val newsList = mutableListOf<News>()
 
-    // Bloque inicializador para cargar datos de ejemplo al arrancar la app.
-    // Así la lista no estará vacía cuando la consultes por primera vez.
+    // Initializer block to load sample data when the app starts.
+    // This way, the list won't be empty.
     init {
         loadSampleData()
     }
 
-    /**
-     * Devuelve una copia de la lista de noticias.
-     */
     override fun getAllNews(): List<News> {
-        // Devolvemos una copia para que nadie desde fuera pueda modificar nuestra lista original.
-        return newsList
+        //  Return a copy so that no one from outside can modify our original list.
+        return newsList.toList()
     }
 
-    /**
-     * Busca y devuelve una noticia por su ID en la lista en memoria.
-     */
     override fun getNewsById(id: String): News? {
-        // El método .find es una forma más limpia de buscar el primer elemento que cumpla una condición.
+        // It returns the first element that matches the condition, or null if not found.
         return newsList.find { it.id == id }
     }
 
-    /**
-     * Función privada para poblar la lista con datos de ejemplo.
-     */
     private fun loadSampleData() {
         newsList.add(
             News(

@@ -7,5 +7,6 @@ enum class TicketStatus(val displayName: String, val color: String) {
     TECHNICIAN_ASSIGNED("Técnico Asignado", "#F97316"),
     IN_PROGRESS("En Progreso", "#EF4444"),
     CLOSED("Cerrado", "#059669"),
-    CANCELLED("Cancelado", "#6B7280")
+    CANCELLED("Cancelado", "#6B7280"),
+    SOLVED("Resuelto", "")
 }

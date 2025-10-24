@@ -12,8 +12,7 @@ data class Ticket (
     val location: String,
     val createdAt: Long = System.currentTimeMillis(),
 
-    // ---(mutables) ---
-    // They are 'var' and public to be able to read and update their status
+
     var status: TicketStatus = TicketStatus.PENDING,
     var priority: String = "medium",
     var updatedAt: Long = System.currentTimeMillis(),

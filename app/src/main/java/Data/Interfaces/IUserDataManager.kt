@@ -15,6 +15,11 @@ interface IUserDataManager {
     fun getUserById(id: String): User?
     fun getUserByEmail(email: String): User?
 
+    fun getAllUsers(): List<User>?
+
     //UPDATE
+    fun updateUser(user: User)
+
+    //DELETE
     fun deleteUser(id: String)
 }

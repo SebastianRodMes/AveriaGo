@@ -2,7 +2,7 @@ package Entity
 
 data class Category(
 
-    val id: String = "",
+    val categoryId: String = "",
     val name: String = "",
     val slug: String = "", //unique identifier and readable instead of using the normal id
     val icon: String = "",
