@@ -1,6 +1,12 @@
+
+import java.text.SimpleDateFormat
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import java.text.SimpleDateFormat
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import java.util.*
 
 class Util {
     companion object{
@@ -13,17 +19,6 @@ class Util {
 
 
 
-        /**
-         * Converts a timestamp (Long) into a something readable date and time string.
-         *
-         * The desired output format ("dd/MM/yyyy HH:mm").
-         *
-         */
-        fun formatTimestamp(timestamp: Long, format: String = "dd/MM/yyyy HH:mm a"): String {
-            if (timestamp == 0L) return "N/A"
-            val sdf = SimpleDateFormat(format, androidx.compose.ui.text.intl.Locale.getDefault())
-            val date = com.google.type.Date(timestamp)
-            return sdf.format(date)
-        }
+
     }
 }
