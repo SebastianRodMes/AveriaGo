@@ -12,7 +12,7 @@ object ChatMemoryDataManager : IChatDataManager {
     private val chatList = mutableListOf<Chat>()
 
     // init block to preload some sample chats for testing.
-    // These now perfectly match the fields in your Chat.kt file.
+
     init {
         loadSampleData()
     }

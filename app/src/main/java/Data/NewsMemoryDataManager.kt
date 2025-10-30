@@ -8,7 +8,7 @@ import Entity.News/**
  */
 object NewsMemoryDataManager : INewsDataManager {
 
-    // In-memory list that will hold all the news items.
+
     private val newsList = mutableListOf<News>()
 
     // Initializer block to load sample data when the app starts.
