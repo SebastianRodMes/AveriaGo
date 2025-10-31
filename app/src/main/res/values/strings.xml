@@ -1,3 +1,55 @@
 <resources>
     <string name="app_name">averiaGo</string>
+
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="third_fragment_label">Third Fragment</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="MsgStart">La solución está en camino</string>
+    <string name="TextStart">Comenzar</string>
+    <string name="TextCreateAcc">Crear cuenta</string>
+    <string name="TexrCompleteData">Completa tus datos para registrarte</string>
+    <string name="textFullName">Nombre completo</string>
+    <string name="textEmail">Correo electrónico</string>
+    <string name="textPhoneNumber">Teléfono</string>
+    <string name="textAddress">Dirección</string>
+    <string name="textPassword">Contraseña</string>
+    <string name="textConfirmPass">Confirmar Contraseña</string>
+    <string name="TextHaveAnAcc">¿Ya tienes una cuenta?</string>
+    <string name="TextLogIn">Iniciar sesión</string>
+    <string name="textForgotPass">Olvidaste la contraseña?</string>
+    <string name="textDontHaveAcc">¿No tienes cuenta?</string>
+    <string name="textRegister">Regístrate</string>
+    <string name="textWelcome">Bienvenido de nuevo</string>
+    <string name="textLogInAcc">Inicia sesión en tu cuenta</string>
+    <string name="MenuHome">Inicio</string>
+    <string name="MenuReport">Reportes</string>
+    <string name="MenuCreate">Crear</string>
+    <string name="MenuProfile">Perfil</string>
+    <string name="BtnAll">Todos</string>
+    <string name="BtnActive">Activos</string>
+    <string name="BtnSolved">Resueltos</string>
+    <string name="TextMyReports">Mis reportes</string>
+    <string name="btnReportBreakdown">Reportar Avería</string>
+    <string name="textActiveReports">Reportes Activos</string>
+    <string name="textNews">Noticias</string>
+    <string name="GreenWarningOK">Todo funcionando bien</string>
+    <string name="GreeWarningNoInterruption">No hay interrupciones reportas en tu zona</string>
+    <string name="BtnEditProfile">Editar Perfil</string>
+    <string name="textMyProfile">Mi perfil</string>
+    <string name="textTotalReportis">Reportes totales</string>
+    <string name="btnNotifications">Notificaciones</string>
+    <string name="TextSecurity">Seguridad</string>
+    <string name="TextLogOut">Cerrar Sesión</string>
+    <string name="textQuickAcc">Acceso Rápido</string>
+
+
 </resources>
