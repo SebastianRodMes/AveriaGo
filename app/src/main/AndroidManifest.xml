@@ -12,10 +12,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AveriaGo">
         <activity
-            android:name=".SignUpActivity"
+            android:name=".ProfileSettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".StartActivity"
+            android:name=".report.CreateReportStep3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".report.CreateReportStep2Telephone"
+            android:exported="false" />
+        <activity
+            android:name=".report.CreateReportStep2TelevisionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".report.CreateReportStep2InternetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".report.CreateReportStep1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".report.ReportsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.LogInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".welcome.StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +50,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
