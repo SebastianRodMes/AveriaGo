@@ -50,6 +50,19 @@
     <string name="TextSecurity">Seguridad</string>
     <string name="TextLogOut">Cerrar Sesión</string>
     <string name="textQuickAcc">Acceso Rápido</string>
+    <string name="TextSave">Guardar</string>
+    <string name="TextDelete">Borrar</string>
+    <string name="TextCancel">Cancelar</string>
+    <string name="MsgDuplicatedData">Datos duplicados</string>
+    <string name="MsgSaveSuccess">Guardado exitosamente</string>
+    <string name="MismatchPass">Contraseñas no coinciden</string>
+    <string name="MsgDeleteSucess">Eliminado exitosamente</string>
+    <string name="MsgDataNotFound">Datos no encontrados</string>
+    <string name="TextSaveActionQuestion">Desea guardar?</string>
+    <string name="TextDeleteActionQuestion">"Borrar? "</string>
+    <string name="TextYes">Si</string>
+    <string name="TextNo">No</string>
+    <string name="TextTitleDialogQuestion">Pregunta...</string>
 
 
 </resources>

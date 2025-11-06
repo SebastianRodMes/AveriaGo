@@ -50,4 +50,17 @@
     <string name="TextSecurity">Security</string>
     <string name="TextLogOut">Log out</string>
     <string name="textQuickAcc">Quick Access</string>
+    <string name="TextSave">Save</string>
+    <string name="TextDelete">Delete</string>
+    <string name="TextCancel">Cancel</string>
+    <string name="MsgDuplicatedData">Duplicated data</string>
+    <string name="MsgSaveSuccess">Saved successfully</string>
+    <string name="MismatchPass">Passwords do not match</string>
+    <string name="MsgDeleteSucess">Deleted successfully</string>
+    <string name="MsgDataNotFound">Data not found</string>
+    <string name="TextSaveActionQuestion">Save?</string>
+    <string name="TextDeleteActionQuestion">Delete?</string>
+    <string name="TextYes">Yes</string>
+    <string name="TextNo">No</string>
+    <string name="TextTitleDialogQuestion">Question...</string>
 </resources>

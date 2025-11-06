@@ -19,24 +19,19 @@ class UserController (private val context: Context) {
     }
 
     //READ
-    fun getUserById(id: String): User{
+    fun getUserById(id: String): User?{
         try {
-            var result = userManager.getUserById(id)
-            if (result == null) {
-                throw Exception("No se encontro el usuario")
-            }
-            return result
+            return userManager.getUserById(id)
+
         }catch (e: Exception){
             throw Exception("Error al obtener el usuario")
         }
     }
-    fun getUserByEmail(email: String): User{
+    fun getUserByEmail(email: String): User?{
         try {
-            var result = userManager.getUserByEmail(email)
-            if (result == null) {
-                throw Exception("No se encontro el usuario")
-            }
-            return result
+            return userManager.getUserByEmail(email)
+
+
         }catch (e: Exception){
             throw Exception("Error al obtener el usuario")
         }
@@ -62,13 +57,13 @@ class UserController (private val context: Context) {
     }
 
     //DELETE
-    fun deleteUser(id: String){
+    fun deleteUser(email: String){
         try {
-        var result = userManager.getUserById(id)
+        var result = userManager.getUserByEmail(email)
         if (result == null) {
             throw Exception("No se encontro el usuario")
         }
-        userManager.deleteUser(id)
+        userManager.deleteUser(email)
     }catch (e: Exception){
         throw Exception("Error al eliminar el usuario")
     }
