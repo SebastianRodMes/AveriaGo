@@ -74,3 +74,19 @@ Perfil de Usuario
 <p align="center">
   <em>Información personal y configuración</em>
 </p>
+
+
+TAREA 05 -
+Based on your project idea, you should add into your project in android studio the following:
+
+Develop an activity with the complete CRUD functionality
+Implement dialog to ask when updating or deleting information.
+Implement search functionality to edit mode.
+Remember all your code must be in english.
+
+Follow these steps to deliver your task:
+
+Remember you need to create a temporal branch where you will commit and push all your changes. In the decription field you need to describe the change you added.
+You should name the PR as: task5-<your name><here your project name>. E.g. Task5-Ever-CensusManagement
+In the description box, add all functionalities you implemented in the PR.
+When it is ready you need to create a PR to main and add the professor as Reviewer. When the professor (ebarahonautn) approves the PR you need to merge the changes to main

@@ -33,6 +33,7 @@
             android:padding="24dp">
 
             <!-- Título Principal -->
+
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
@@ -302,11 +303,13 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Botón para Crear Cuenta -->
+
+            <!-- Texto para Iniciar Sesión si ya se tiene cuenta -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCreateAccount"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="12dp"
                 android:backgroundTint="#2563EB"
                 android:paddingVertical="16dp"
                 android:text="@string/TextCreateAcc"
@@ -316,10 +319,10 @@
                 android:textStyle="bold"
                 app:cornerRadius="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tilConfirmPassword" />
 
-            <!-- Texto para Iniciar Sesión si ya se tiene cuenta -->
             <LinearLayout
                 android:id="@+id/llLogin"
                 android:layout_width="wrap_content"
@@ -355,6 +358,17 @@
                     android:textStyle="bold" />
 
             </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnSearch_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/tilFullName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toEndOf="@+id/tvSubtitle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_search" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
