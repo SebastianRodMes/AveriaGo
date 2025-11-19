@@ -90,3 +90,11 @@ Remember you need to create a temporal branch where you will commit and push all
 You should name the PR as: task5-<your name><here your project name>. E.g. Task5-Ever-CensusManagement
 In the description box, add all functionalities you implemented in the PR.
 When it is ready you need to create a PR to main and add the professor as Reviewer. When the professor (ebarahonautn) approves the PR you need to merge the changes to main
+
+
+TASK-06
+
+Add gallery and/or camera to your activities to select a picture.
+Add into the save action to store the picture as bitmap object.
+Add a new activity to display a customized list of the information usng recycler view.
+Remember all your code must be in english.

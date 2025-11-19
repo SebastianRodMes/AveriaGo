@@ -146,7 +146,7 @@ fun createNewTicket(userId: String, categoryManager: ICategoryDataManager, ticke
 fun viewMyTickets(userId: String, ticketManager: ITicketDataManager) {
     println("\n--- MIS TICKETS ---")
     val myTickets = ticketManager.getTicketsByUserId(userId)
-    if (myTickets.isEmpty()) {
+    if (myTickets!!.isEmpty()) {
         println("No tienes ningún ticket registrado.")
         return
     }
@@ -159,7 +159,7 @@ fun viewMyTickets(userId: String, ticketManager: ITicketDataManager) {
 fun viewAndManageChat(userId: String, ticketManager: ITicketDataManager, chatManager: IChatDataManager, messageManager: IMessageDataManager) {
     println("\n--- SELECCIONAR CHAT DE TICKET ---")
     val myTickets = ticketManager.getTicketsByUserId(userId)
-    if (myTickets.isEmpty()) {
+    if (myTickets!!.isEmpty()) {
         println("No tienes tickets para ver el chat.")
         return
     }

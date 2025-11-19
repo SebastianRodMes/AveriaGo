@@ -3,197 +3,138 @@ package com.sebastianrodriguez.averiago.auth
 import Controller.UserController
 import Entity.User
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
+import android.util.Patterns
 import android.widget.ImageButton
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 import com.sebastianrodriguez.averiago.R
-import java.time.LocalDate
+import com.sebastianrodriguez.averiago.utils.LoadingDialog
 import Util
 
 class SignUpActivity : AppCompatActivity() {
-    lateinit var txtFullname: TextInputEditText
-    lateinit var txtEmail: TextInputEditText
-    lateinit var txtPhoneNumber: TextInputEditText
-    lateinit var txtAddress: TextInputEditText
-    lateinit var txtPass: TextInputEditText
-    lateinit var txtConfirmPass: TextInputEditText
-    lateinit var userController: UserController
-    private var isEditMode : Boolean = false
-    private lateinit var menuItemDelete: MenuItem
+    private lateinit var txtFullname: TextInputEditText
+    private lateinit var txtEmail: TextInputEditText
+    private lateinit var txtPhoneNumber: TextInputEditText
+    private lateinit var txtAddress: TextInputEditText
+    private lateinit var txtPass: TextInputEditText
+    private lateinit var txtConfirmPass: TextInputEditText
+
+    private lateinit var userController: UserController
+    private lateinit var loadingDialog: LoadingDialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_sign_up)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-     userController  = UserController(this)
-        txtFullname = findViewById<TextInputEditText>(R.id.etFullName)
-        txtEmail = findViewById<TextInputEditText>(R.id.etEmail)
-        txtPhoneNumber = findViewById<TextInputEditText>(R.id.etPhone)
-        txtAddress = findViewById<TextInputEditText>(R.id.etAddress)
-        txtPass = findViewById<TextInputEditText>(R.id.etPassword)
-        txtConfirmPass = findViewById<TextInputEditText>(R.id.etConfirmPassword)
 
-        val btnSearch = findViewById<ImageButton>(R.id.btnSearch_signup)
-        btnSearch.setOnClickListener {
-            searchPerson(txtEmail.text!!.trim().toString())
+        loadingDialog = LoadingDialog(this)
+        userController = UserController(this) // usa SharedPrefsUserDataManager por defecto
+
+        txtFullname = findViewById(R.id.etFullName)
+        txtEmail = findViewById(R.id.etEmail)
+        txtPhoneNumber = findViewById(R.id.etPhone)
+        txtAddress = findViewById(R.id.etAddress)
+        txtPass = findViewById(R.id.etPassword)
+        txtConfirmPass = findViewById(R.id.etConfirmPassword)
+
+        // Si ya hay al menos un usuario registrado, redirige al login
+        if (userAlreadyRegistered()) {
+            Toast.makeText(this, "Ya tienes una cuenta. Inicia sesión.", Toast.LENGTH_LONG).show()
+            Util.openActivity(this, LogInActivity::class.java)
+            finish()
+            return
         }
 
+        val btnCreateAccount = findViewById<MaterialButton>(R.id.btnCreateAccount)
+        btnCreateAccount.setOnClickListener {
+            if (validationData()) {
+                savePerson()
+            } else {
+                Toast.makeText(this, "Datos incompletos o inválidos", Toast.LENGTH_LONG).show()
+            }
+        }
 
-    }//cierra el on create
+        val btnReturn = findViewById<ImageButton>(R.id.btnReturn)
+        btnReturn.setOnClickListener {
+            finish()
+        }
+    }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.menu_crud, menu)
-        menuItemDelete = menu!!.findItem(R.id.btn_delete_mnu)
-        menuItemDelete.isVisible = isEditMode
+    private fun validationData(): Boolean {
+        val emailText = txtEmail.text?.toString()?.trim() ?: ""
+        val fullNameText = txtFullname.text?.toString()?.trim() ?: ""
+        val phoneText = txtPhoneNumber.text?.toString()?.trim() ?: ""
+        val addressText = txtAddress.text?.toString()?.trim() ?: ""
+        val passText = txtPass.text?.toString() ?: ""
+        val confirmText = txtConfirmPass.text?.toString() ?: ""
+
+        if (emailText.isEmpty() || fullNameText.isEmpty() || phoneText.isEmpty() ||
+            addressText.isEmpty() || passText.isEmpty() || confirmText.isEmpty()) {
+            return false
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) return false
+        if (passText != confirmText) return false
+        if (passText.length < 6) return false
+
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId){
-            R.id.btn_save_mnu->{
-                if (isEditMode){
-                    Util.showDialogCondition(this, getString(R.string.TextSaveActionQuestion), {savePerson()})
-                }else {
-                    savePerson()
-                }
-                return true
-            }
-            R.id.btn_delete_mnu -> {
-                Util.showDialogCondition(this, getString(R.string.TextDeleteActionQuestion), {deletePerson()})
-                return true
-            }
-            R.id.btn_cancel_mnu ->{
-                cleanScreen()
-                return true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-
-    }
-
-
-    private fun searchPerson(email: String){
+    private fun savePerson() {
         try {
-            val user = userController.getUserByEmail(email)
-            if (user != null){
-                isEditMode=true
-                txtEmail.setText(user!!.email.toString())
-                txtEmail.isEnabled=false
-                txtFullname.setText(user.fullName.toString())
-                txtPhoneNumber.setText(user.phoneNumber.toString())
-                txtAddress.setText(user.address.toString())
-                txtPass.setText(user.password.toString())
-                menuItemDelete.isVisible = true
-            }else{
-                Toast.makeText(this, getString(R.string.MsgDataNotFound),
-                    Toast.LENGTH_LONG).show()
-            }
-        }catch (e: Exception){
-            cleanScreen()
-            Toast.makeText(this, e.message.toString(),
-                Toast.LENGTH_LONG).show()
-        }
-    }
-    private fun cleanScreen(){
+            val email = txtEmail.text.toString().trim()
 
-        isEditMode=false
-        txtEmail.isEnabled = true
-        txtFullname.setText("")
-        txtEmail.setText("")
-        txtPhoneNumber.setText("")
-        txtAddress.setText("")
-        txtPass.setText("")
-        txtConfirmPass.setText("")
-
-        invalidateOptionsMenu() //CORRE EL OnCreateOptionMenu
-    }
-
-
-    fun validationData(): Boolean {
-        return txtEmail.text!!.trim().isNotEmpty() && txtFullname.text!!.trim().isNotEmpty()
-                && txtPhoneNumber.text!!.trim().isNotEmpty() && txtAddress.text!!.trim().isNotEmpty()
-                && txtPass.text!!.trim().isNotEmpty() && txtConfirmPass.text!!.trim().isNotEmpty()
-
-    }
-
-    fun savePerson() {
-        try {
-            if (validationData()) {
-                if (txtPass.text.toString() != txtConfirmPass.text.toString()){
-                    Toast.makeText(this, getString(R.string.MismatchPass), Toast.LENGTH_LONG).show()
-                    return
-                }
-                if (userController.getUserByEmail(txtEmail.text.toString().trim()) != null
-                    && !isEditMode) {
-                    Toast.makeText(
-                        this,
-                        getString(R.string.MsgDuplicatedData),
-                        Toast.LENGTH_LONG
-                    ).show()
-                } else {
-                    val user = User()
-                    user.fullName = txtFullname.text.toString()
-                    user.email = txtEmail.text.toString()
-                    user.phoneNumber = txtPhoneNumber.text.toString()
-                    user.address = txtAddress.text.toString()
-                    user.password= txtAddress.text.toString()
-
-
-
-
-
-                    if (!isEditMode)
-                        userController.addUser(user)
-
-
-
-                    else
-                        userController.updateUser(user)
-
-                    cleanScreen()
-
-                    Toast.makeText(
-                        this, getString(R.string.MsgSaveSuccess), Toast.LENGTH_LONG
-                    ).show()
-                }
-            } else {
-                Toast.makeText(
-                    this, "Datos incompletos", Toast.LENGTH_LONG
-                ).show()
-
+            val existing = try {
+                userController.getUserByEmail(email)
+            } catch (e: Exception) {
+                null
             }
 
+            if (existing != null) {
+                Toast.makeText(this, "Ya existe un usuario con ese correo", Toast.LENGTH_LONG).show()
+                return
+            }
+
+            val user = User().apply {
+                fullName = txtFullname.text.toString().trim()
+                this.email = email
+                phoneNumber = txtPhoneNumber.text.toString().trim()
+                address = txtAddress.text.toString().trim()
+                password = txtPass.text.toString()
+            }
+
+            userController.addUser(user)
+
+            // No guardamos password en SharedPreferences; persistencia ya está en SharedPrefsUserDataManager.
+            loadingDialog.show("Creando cuenta...", 2000) {
+                Toast.makeText(this, getString(R.string.MsgSaveSuccess), Toast.LENGTH_SHORT).show()
+                Util.openActivity(this, LogInActivity::class.java)
+                finish()
+            }
 
         } catch (e: Exception) {
-            Toast.makeText(
-                this, e.message.toString(), Toast.LENGTH_LONG
-            ).show()
+            loadingDialog.hide()
+            Toast.makeText(this, e.message ?: "Error al crear usuario", Toast.LENGTH_LONG).show()
         }
     }
 
-    fun deletePerson(): Unit {
-        try {
-            userController.deleteUser(txtEmail.text!!.trim().toString())
-            cleanScreen()
-            Toast.makeText(this, getString(R.string.MsgDeleteSucess), Toast.LENGTH_LONG).show()
-        }catch (e: Exception){
-            Toast.makeText(this, e.message.toString(), Toast.LENGTH_LONG).show()
+    private fun userAlreadyRegistered(): Boolean {
+        val users = try {
+            userController.getAllUsers()
+        } catch (e: Exception) {
+            null
         }
+        return users != null && users.isNotEmpty()
     }
-
-
 }

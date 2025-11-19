@@ -43,12 +43,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Tipo de problema -->
+        <!-- Descripción (category - subcategory) -->
         <TextView
-            android:id="@+id/tvProblemType"
+            android:id="@+id/tvDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
             android:text="Internet - Sin conexión"
             android:textColor="#6B7280"
             android:textSize="14sp"
@@ -56,20 +56,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCaseNumber" />
 
-        <!-- Descripción -->
-        <TextView
-            android:id="@+id/tvDescription"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="No tengo internet desde ayer en la tarde"
-            android:textColor="#4B5563"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvProblemType" />
-
-        <!-- Fecha y flecha -->
+        <!-- Fecha -->
         <TextView
             android:id="@+id/tvDate"
             android:layout_width="0dp"

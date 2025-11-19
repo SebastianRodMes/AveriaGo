@@ -1,26 +1,22 @@
 package Controller
 
-import Data.CategoryMemoryDataManager
 import Data.Interfaces.ICategoryDataManager
+import Data.CategoryMemoryDataManager
 import Entity.Category
 import android.content.Context
 
-
-
-class CategoryController(private val context: Context) {
-
+class CategoryController(
+    private val context: Context,
     private val categoryManager: ICategoryDataManager = CategoryMemoryDataManager
-
+) {
 
     fun getAllCategories(): List<Category> {
         try {
             return categoryManager.getAllCategories()
         } catch (e: Exception) {
-
-            throw Exception("Error al obtener todas las categorías")
+            throw Exception("Error al obtener todas las categorías: ${e.message}")
         }
     }
-
 
     fun getCategoryById(id: String): Category {
         try {
@@ -31,9 +27,16 @@ class CategoryController(private val context: Context) {
                 throw Exception("No se encontró ninguna categoría con el ID: $id")
             }
         } catch (e: Exception) {
+            throw Exception("Error al obtener la categoría por ID: ${e.message}")
+        }
+    }
 
-                throw Exception("Error al obtener la categoría por ID")
-
+    // Ahora usamos directamente el método del manager expuesto por la interfaz
+    fun getCategoryBySlug(slug: String): Category? {
+        try {
+            return categoryManager.getCategoryBySlug(slug)
+        } catch (e: Exception) {
+            throw Exception("Error al obtener la categoría por slug: ${e.message}")
         }
     }
 }

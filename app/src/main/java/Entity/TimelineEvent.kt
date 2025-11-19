@@ -3,27 +3,25 @@ package Entity
 import Entity.enums.TicketStatus
 
 data class TimelineEvent(
-    /**
-     * El nuevo estado que se estableció en este evento.
-     */
-    val status: TicketStatus,
+    // Si el evento implica un cambio de estado, aquí va el nuevo estado.
+    // Puede ser null para eventos informativos (comentarios, fotos, etc.).
+    val status: TicketStatus? = null,
 
-    /**
-     * El nombre de la persona o entidad que generó el evento.
-     * Ejemplo: "Juan Pérez" (cliente), "María López" (agente), "Sistema".
-     */
-    val actorName: String,
+    // Id del actor (userId, agentId, "system", etc.)
+    val actorId: String = "",
 
-    /**
-     * El rol de la persona que generó el evento.
-     * Esto permite mostrar iconos o textos diferentes en la UI.
-     * Ejemplo: "cliente", "agente", "tecnico", "sistema".
-     */
-    val actorRole: String,
+    // Nombre legible del actor (opcional)
+    val actorName: String? = null,
 
+    // Rol del actor ("cliente", "agente", "tecnico", "sistema", ...)
+    val actorRole: String? = null,
 
-    /**
-     * El momento exacto en que ocurrió el evento. Por defecto, es el momento de la creación.
-     */
+    // Mensaje libre describiendo el evento (opcional)
+    val message: String? = null,
+
+    // URLs / paths de fotos o archivos relacionados con el evento
+    val attachments: MutableList<String> = mutableListOf(),
+
+    // Momento del evento
     val timestamp: Long = System.currentTimeMillis()
 )

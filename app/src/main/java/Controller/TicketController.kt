@@ -1,73 +1,62 @@
 package Controller
 
 import Data.Interfaces.ITicketDataManager
-import Data.TicketMemoryDataManager
+import Data.SharedPrefsTicketDataManager
 import Entity.Ticket
 import android.content.Context
 
-class TicketController (private val context: Context){
-    private var ticketManager: ITicketDataManager = TicketMemoryDataManager
-    fun addTicket(ticket: Ticket){
+class TicketController(
+    private val context: Context,
+    private val ticketManager: ITicketDataManager
+) {
+    // Constructor secundario que inyecta la implementación por defecto (SharedPrefs)
+    constructor(context: Context) : this(context, SharedPrefsTicketDataManager.getInstance(context))
+
+    fun addTicket(ticket: Ticket) {
         try {
             ticketManager.addTicket(ticket)
-        }catch (e: Exception){
-            throw Exception("Error al agregar el ticket")
-
+        } catch (e: Exception) {
+            throw Exception("Error al agregar el ticket: ${e.message}")
         }
     }
 
-    // READ
-    fun getTicketById(id: String): Ticket{
+    fun getTicketById(id: String): Ticket? {
         try {
-            var result = ticketManager.getTicketById(id)
-            if (result == null) {
-                throw Exception("No se encontro el ticket")
-            }
-            return result
-        }catch (e: Exception){
+            return ticketManager.getTicketById(id)
+        } catch (e: Exception) {
             throw Exception("Error al obtener el ticket")
         }
     }
-    fun getAllTickets(): List<Ticket>{
-        try {
-            var result = ticketManager.getAllTickets()
-            if (result == null) {
-                throw Exception("No se encontraron tickets")
-            }
-            return result
-            }catch (e: Exception){
-            throw Exception("Error al obtener los tickets")
-        }
 
-    }
-    fun getTicketsByUserId(userId: String): List<Ticket>{
+    fun getTicketsByUserId(userId: String): List<Ticket>? {
         try {
-            var result = ticketManager.getTicketsByUserId(userId)
-            if (result == null) {
-                throw Exception("No se encontraron tickets")
-            }
-            return result
-            }catch (e: Exception){
+            return ticketManager.getTicketsByUserId(userId)
+        } catch (e: Exception) {
+            throw Exception("Error al obtener los tickets del usuario")
+        }
+    }
+
+    fun getAllTickets(): List<Ticket>? {
+        try {
+            return ticketManager.getAllTickets()
+        } catch (e: Exception) {
             throw Exception("Error al obtener los tickets")
         }
     }
 
-    // UPDATE
-    fun updateTicket(ticket: Ticket){
+    fun updateTicket(ticket: Ticket) {
         try {
-            var ticketExists = ticketManager.getTicketById(ticket.ticketId)
-            if (ticketExists == null) {
-                throw Exception("No se encontro el ticket")
-            }
             ticketManager.updateTicket(ticket)
-            }catch (e: Exception){
+        } catch (e: Exception) {
             throw Exception("Error al actualizar el ticket")
-            }
         }
+    }
 
-
-
-
-
-
+    fun deleteTicket(id: String) {
+        try {
+            ticketManager.deleteTicket(id)
+        } catch (e: Exception) {
+            throw Exception("Error al eliminar el ticket")
+        }
+    }
 }

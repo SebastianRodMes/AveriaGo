@@ -85,24 +85,50 @@
 
     </com.google.android.material.chip.ChipGroup>
 
-    <!-- Report List -->
+    <!-- RecyclerView de reportes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReports"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingVertical="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chipGroup"
+        tools:listitem="@layout/item_report" />
 
-    <!-- Every ticket/report will be implemented this way, i'll use this as the template for each ticket as the user create them
+    <!-- Mensaje cuando no hay reportes -->
+    <LinearLayout
+        android:id="@+id/emptyState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/rvReports"
+        app:layout_constraintBottom_toBottomOf="@id/rvReports"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-<!-    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/rvReports"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:clipToPadding="false"-->
-<!--        android:paddingVertical="8dp"-->
-<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/chipGroup"-->
-<!--        app:layout_constraintVertical_bias="0.0"-->
-<!--        tools:listitem="@layout/item_report" />-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No tienes reportes aún"
+            android:textSize="18sp"
+            android:textColor="#6B7280"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Crea tu primer reporte"
+            android:textSize="14sp"
+            android:textColor="#9CA3AF" />
+
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"

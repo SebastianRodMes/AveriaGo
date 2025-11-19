@@ -78,7 +78,7 @@ object TicketMemoryDataManager : ITicketDataManager {
         }
     }
 
-    override fun removeTicket(id: String) {
+    override fun deleteTicket(id: String) {
         println("removeTicket: Intentando eliminar ticket con ID '$id'")
         val removed = ticketList.removeIf { it.ticketId == id }
         if (removed) {
