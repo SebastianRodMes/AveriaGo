@@ -2,73 +2,75 @@ package Controller
 
 import Data.Interfaces.IUserDataManager
 import Data.UserMemoryDataManager
+import Data.SharedPrefsUserDataManager
 import Entity.User
 import android.content.Context
 
-class UserController (private val context: Context) {
-    private var userManager: IUserDataManager = UserMemoryDataManager
+class UserController(
+    private val context: Context,
+    private val userManager: IUserDataManager
+) {
 
+    // Constructor secundario que inyecta la implementación por defecto (SharedPrefs)
+    constructor(context: Context) : this(context, SharedPrefsUserDataManager.getInstance(context))
 
-
-    fun addUser (user: User){
+    fun addUser(user: User) {
         try {
+            // Evitar duplicados por email
+            val existing = userManager.getUserByEmail(user.email)
+            if (existing != null) {
+                throw Exception("Usuario con este correo ya existe")
+            }
             userManager.addUser(user)
-        }catch (e: Exception){
-            throw Exception("Error al agregar el usuario")
+        } catch (e: Exception) {
+            throw Exception("Error al agregar el usuario: ${e.message}")
         }
     }
 
-    //READ
-    fun getUserById(id: String): User?{
+    // READ
+    fun getUserById(id: String): User? {
         try {
             return userManager.getUserById(id)
-
-        }catch (e: Exception){
+        } catch (e: Exception) {
             throw Exception("Error al obtener el usuario")
         }
     }
-    fun getUserByEmail(email: String): User?{
+
+    fun getUserByEmail(email: String): User? {
         try {
             return userManager.getUserByEmail(email)
-
-
-        }catch (e: Exception){
+        } catch (e: Exception) {
             throw Exception("Error al obtener el usuario")
         }
     }
 
-    fun getAllUsers(){
+    fun getAllUsers(): List<User>? {
         try {
-            userManager.getAllUsers()
-        }catch (e: Exception){
+            return userManager.getAllUsers()
+        } catch (e: Exception) {
             throw Exception("Error al obtener los usuarios")
         }
-
     }
 
-    //UPDATE
-    fun updateUser(user: User){
+    // UPDATE
+    fun updateUser(user: User) {
         try {
-           userManager.updateUser(user)
-        }catch (e:Exception){
+            userManager.updateUser(user)
+        } catch (e: Exception) {
             throw Exception("Error al actualizar el usuario")
         }
-
     }
 
-    //DELETE
-    fun deleteUser(email: String){
+    // DELETE by email (busca por email y elimina por userId)
+    fun deleteUserByEmail(email: String) {
         try {
-        var result = userManager.getUserByEmail(email)
-        if (result == null) {
-            throw Exception("No se encontro el usuario")
+            val result = userManager.getUserByEmail(email)
+            if (result == null) {
+                throw Exception("No se encontró el usuario")
+            }
+            userManager.deleteUser(result.userId)
+        } catch (e: Exception) {
+            throw Exception("Error al eliminar el usuario")
         }
-        userManager.deleteUser(email)
-    }catch (e: Exception){
-        throw Exception("Error al eliminar el usuario")
-    }
     }
 }
-
-
-

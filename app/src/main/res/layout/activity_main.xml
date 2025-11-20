@@ -128,94 +128,93 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-<!--            the way it should look once the user has multiple reports/tickets-->
-<!--            &lt;!&ndash; Card de Reporte Activo &ndash;&gt;-->
-<!--            <com.google.android.material.card.MaterialCardView-->
-<!--                android:id="@+id/cardReporte"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginBottom="24dp"-->
-<!--                app:cardCornerRadius="12dp"-->
-<!--                app:cardElevation="2dp"-->
-<!--                android:clickable="true"-->
-<!--                android:focusable="true">-->
+            <!-- Card de Reporte Activo -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardReporte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="gone">
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="vertical"-->
-<!--                    android:padding="16dp">-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-<!--                    &lt;!&ndash; Título del caso &ndash;&gt;-->
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:orientation="horizontal"-->
-<!--                        android:layout_marginBottom="8dp">-->
+                    <!-- Título del caso -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
 
-<!--                        <TextView-->
-<!--                            android:id="@+id/tvCaseNumber"-->
-<!--                            android:layout_width="0dp"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:text="Caso #12345"-->
-<!--                            android:textColor="#1F2937"-->
-<!--                            android:textSize="16sp"-->
-<!--                            android:textStyle="bold" />-->
+                        <TextView
+                            android:id="@+id/tvCaseNumber_main"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Caso #12345"
+                            android:textColor="#1F2937"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
 
-<!--                        <com.google.android.material.chip.Chip-->
-<!--                            android:id="@+id/chipStatus"-->
-<!--                            style="@style/Widget.Material3.Chip.Assist"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="En Atención"-->
-<!--                            android:textColor="#2563EB"-->
-<!--                            app:chipBackgroundColor="#E0E7FF"-->
-<!--                            app:chipIcon="@drawable/ic_clock"-->
-<!--                            app:chipIconTint="#2563EB"-->
-<!--                            app:chipMinHeight="32dp" />-->
-<!--                    </LinearLayout>-->
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipStatus_main"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="En Atención"
+                            android:textColor="#2563EB"
+                            app:chipIcon="@drawable/ic_clock"
+                            app:chipIconTint="#2563EB"
+                            app:chipMinHeight="32dp" />
+                    </LinearLayout>
 
-<!--                    &lt;!&ndash; Descripción &ndash;&gt;-->
-<!--                    <TextView-->
-<!--                        android:id="@+id/tvDescription"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginBottom="12dp"-->
-<!--                        android:text="Internet - Sin conexión"-->
-<!--                        android:textColor="#6B7280"-->
-<!--                        android:textSize="14sp" />-->
+                    <!-- Descripción -->
+                    <TextView
+                        android:id="@+id/tvDescription_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="Internet - Sin conexión"
+                        android:textColor="#6B7280"
+                        android:textSize="14sp" />
 
-<!--                    &lt;!&ndash; Fecha y botón chat &ndash;&gt;-->
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:orientation="horizontal"-->
-<!--                        android:gravity="center_vertical">-->
+                    <!-- Fecha y botón chat -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-<!--                        <TextView-->
-<!--                            android:id="@+id/tvDate"-->
-<!--                            android:layout_width="0dp"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:text="20 Oct 2025"-->
-<!--                            android:textColor="#9CA3AF"-->
-<!--                            android:textSize="13sp" />-->
+                        <TextView
+                            android:id="@+id/tvDate_main"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="20 Oct 2025"
+                            android:textColor="#9CA3AF"
+                            android:textSize="13sp" />
 
-<!--                        <com.google.android.material.button.MaterialButton-->
-<!--                            android:id="@+id/btnChat"-->
-<!--                            style="@style/Widget.Material3.Button.TextButton"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Chat"-->
-<!--                            android:textColor="#2563EB"-->
-<!--                            app:icon="@drawable/ic_chat"-->
-<!--                            app:iconTint="#2563EB" />-->
-<!--                    </LinearLayout>-->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnChat"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chat"
+                            android:textColor="#2563EB"
+                            app:icon="@drawable/ic_chat"
+                            app:iconTint="#2563EB" />
+                    </LinearLayout>
 
-<!--                </LinearLayout>-->
+                </LinearLayout>
 
-<!--            </com.google.android.material.card.MaterialCardView>-->
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- Sección Acceso Rápido -->
             <TextView

@@ -59,7 +59,7 @@ fun main() {
 
     // 6. Test removing a ticket.
     println("\n[PASO 6: ELIMINAR UN TICKET]")
-    manager.removeTicket("TCK-004")
+    manager.deleteTicket("TCK-004")
     println("Total de tickets al final: ${manager.getAllTickets().size}")
 
     println("\n--- PRUEBAS FINALIZADAS ---")

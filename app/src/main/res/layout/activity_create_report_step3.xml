@@ -181,6 +181,7 @@
                 app:strokeWidth="2dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/containerPhoto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="32dp">
@@ -188,13 +189,16 @@
                     <!-- Icono de cámara -->
                     <ImageView
                         android:id="@+id/iconCamera"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         android:src="@drawable/ic_camera"
+                        android:scaleType="centerInside"
                         app:tint="#9CA3AF"
+                        app:layout_constraintDimensionRatio="16:9"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/tvAddPhotos"/>
 
                     <!-- Texto: Toca para agregar fotos -->
                     <TextView
@@ -202,7 +206,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Toca para agregar fotos"
+                        android:text="Toca para agregar foto"
                         android:textColor="#6B7280"
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -215,7 +219,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Máximo 3 imágenes"
+
                         android:textColor="#9CA3AF"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"

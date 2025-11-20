@@ -2,6 +2,7 @@ package Entity
 
 import Entity.enums.Rating
 import Entity.enums.TicketStatus
+import android.graphics.Bitmap
 
 data class Ticket (
     val ticketId: String, //  We assume that it is given when creating the object
@@ -20,7 +21,7 @@ data class Ticket (
     var assignedAgentId: String = "",
     var assignedTechnicianId: String = "",
 
-    var photos: MutableList<String> = mutableListOf(),
+    var photo: Bitmap ?= null,
     var timeline: MutableList<TimelineEvent> = mutableListOf(),
 
     var closedAt: Long? = null,

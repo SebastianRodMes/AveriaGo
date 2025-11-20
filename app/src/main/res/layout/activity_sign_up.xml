@@ -14,9 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#FFFFFF"
-        app:navigationIcon="@drawable/ic_arrow_back"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageButton
+            android:id="@+id/btnReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="12dp"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Buscar usuario" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
     <!-- Contenedor principal con Scroll -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
@@ -305,11 +314,12 @@
             <!-- Botón para Crear Cuenta -->
 
             <!-- Texto para Iniciar Sesión si ya se tiene cuenta -->
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCreateAccount"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:backgroundTint="#2563EB"
                 android:paddingVertical="16dp"
                 android:text="@string/TextCreateAcc"
@@ -359,16 +369,7 @@
 
             </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/btnSearch_signup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@+id/tilFullName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.506"
-                app:layout_constraintStart_toEndOf="@+id/tvSubtitle"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@android:drawable/ic_menu_search" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
