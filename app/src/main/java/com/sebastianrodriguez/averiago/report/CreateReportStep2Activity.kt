@@ -105,7 +105,7 @@ class CreateReportStep2Activity : AppCompatActivity() {
         }
     }
 
-    // El antiguo fallback (tu lista hardcodeada) en caso de que la categoría no exista
+    // El lista hardcodeada en caso de que la categoría no exista
     private fun loadFallbackOptions() {
         val options = when (serviceSlug.toLowerCase()) {
             "internet" -> listOf(

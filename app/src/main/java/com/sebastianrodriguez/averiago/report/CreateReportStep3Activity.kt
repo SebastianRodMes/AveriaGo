@@ -103,7 +103,7 @@ class CreateReportStep3Activity : AppCompatActivity() {
         tvLocationName = findViewById(R.id.tvLocationName)
         imgPhoto = findViewById(R.id.iconCamera)
 
-        // Pre-cargar la descripción del Step 2
+        // Precargar la descripción del Step 2
         etDescription.setText(problemDescription)
     }
 
@@ -171,13 +171,13 @@ class CreateReportStep3Activity : AppCompatActivity() {
                     return@show
                 }
 
-                // Generar ticketId único
+                // Generar ticketId único (cambiar ya que genera un id muy extenso)
                 val ticketId = UUID.randomUUID().toString()
 
                 val sharedPref = getSharedPreferences("AveriaguApp", MODE_PRIVATE)
                 val address = sharedPref.getString("address", "No especificada") ?: "No especificada"
 
-                // Obtener la foto de forma segura
+                // Obtener la foto
                 val photoBitmap = try {
                     (imgPhoto.drawable as? BitmapDrawable)?.bitmap
                 } catch (e: Exception) {

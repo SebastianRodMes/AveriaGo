@@ -116,7 +116,7 @@ class SignUpActivity : AppCompatActivity() {
 
             userController.addUser(user)
 
-            // No guardamos password en SharedPreferences; persistencia ya está en SharedPrefsUserDataManager.
+            // No guardamos password en SharedPreferences, persistencia ya está en SharedPrefsUserDataManager.
             loadingDialog.show("Creando cuenta...", 2000) {
                 Toast.makeText(this, getString(R.string.MsgSaveSuccess), Toast.LENGTH_SHORT).show()
                 Util.openActivity(this, LogInActivity::class.java)

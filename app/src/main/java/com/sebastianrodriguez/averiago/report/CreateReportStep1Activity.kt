@@ -41,7 +41,7 @@ class CreateReportStep1Activity : AppCompatActivity() {
     }
 
     private fun setupServiceCards() {
-        // Card Internet -> pasamos el slug (coincide con CategoryMemoryDataManager)
+        // Card Internet, pasamos el slug (CategoryMemoryDataManager)
         val cardInternet = findViewById<MaterialCardView>(R.id.cardInternet)
         cardInternet.setOnClickListener {
             // Enviar slug en vez del nombre
@@ -54,7 +54,7 @@ class CreateReportStep1Activity : AppCompatActivity() {
             navigateToStep2("television")
         }
 
-        // Card Teléfono (slug definido en tu CategoryMemoryDataManager como "telefonia_movil")
+        // Card Teléfono (slug definido en CategoryMemoryDataManager como "telefonia_movil")
         val cardPhone = findViewById<MaterialCardView>(R.id.cardPhone)
         cardPhone.setOnClickListener {
             navigateToStep2("telefonia_movil")
@@ -63,7 +63,7 @@ class CreateReportStep1Activity : AppCompatActivity() {
 
     private fun navigateToStep2(serviceSlug: String) {
         val intent = Intent(this, CreateReportStep2Activity::class.java)
-        // Nota: ahora pasamos el SLUG para búsquedas consistentes
+        //  pasamos el SLUG para búsquedas consistentes
         intent.putExtra("SERVICE_SLUG", serviceSlug)
         startActivity(intent)
     }

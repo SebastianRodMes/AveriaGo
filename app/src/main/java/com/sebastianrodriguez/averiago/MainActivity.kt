@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             null
         } ?: run {
-            // Fallback a shared prefs clásico (por compatibilidad)
+            // Fallback a shared prefs clásico
             val sharedPref = getSharedPreferences("AveriaguApp", MODE_PRIVATE)
             sharedPref.getString("fullName", "Usuario")
         }
@@ -198,7 +198,7 @@ class MainActivity : AppCompatActivity() {
         val last = tickets.maxByOrNull { it.createdAt } ?: tickets.first()
         cardReporte?.visibility = View.VISIBLE
 
-        // Mostrar número de caso (puedes usar un formato distinto si quieres)
+        // Mostrar número de caso
         tvCaseNumber?.text = "Caso ${last.getFormattedId()}"
 
         // Mostrar descripción corta (category - subcategory)

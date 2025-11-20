@@ -73,7 +73,7 @@ class ReportsActivity : AppCompatActivity() {
         reportAdapter = ReportAdapter(emptyList()) { ticket ->
             // Al hacer click en un reporte, abrir los detalles
             Toast.makeText(this, "Ver detalles del caso ${ticket.getFormattedId()}", Toast.LENGTH_SHORT).show()
-            // Aquí puedes navegar a la pantalla de detalles:
+            // Aquí se podria  navegar a la pantalla de detalles:
             // val intent = Intent(this, ReportDetailActivity::class.java)
             // intent.putExtra("TICKET_ID", ticket.ticketId)
             // startActivity(intent)

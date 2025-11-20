@@ -44,7 +44,7 @@ class LogInActivity : AppCompatActivity() {
         txtEmail = findViewById(R.id.etEmail_login)
         txtPass = findViewById(R.id.etPassword_login)
 
-        // Pre-cargar primer email registrado (si existe)
+        // Precargar primer email registrado (si existe)
         loadSavedEmail()
 
         val btnReturn = findViewById<ImageButton>(R.id.btnReturn_login)
@@ -94,7 +94,7 @@ class LogInActivity : AppCompatActivity() {
         }
 
         if (user.password == passInput) {
-            // Login exitoso: guardamos solo currentUserId / isLoggedIn en prefs (sin password)
+            // Login exitoso, guardamos solo currentUserId / isLoggedIn en prefs (sin password)
             val sharedPref = getSharedPreferences("AveriaguApp_session", MODE_PRIVATE)
             sharedPref.edit().apply {
                 putBoolean("isLoggedIn", true)
